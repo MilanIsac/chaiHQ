@@ -5,5 +5,10 @@ Chai Tweet
 {% endblock %}
 
 {% block content %}
-<h1 class="text-center mt-4">Welcome to Chai Tweet</h1>
+<h1 class="text-center mt-4">Are you sure about that?</h1>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Delete</button>
+    <button href="{% url "tweet_list" %}" class="btn btn-success">Cancel</button>
+</form>
 {% endblock %}
